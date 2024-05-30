@@ -1,0 +1,41 @@
+{% extends 'header.html' %}
+{% block title %} Login {%endblock%}
+{%block content%}
+<section class="flex-row">
+    <div class="leftContainer">
+    <h1>
+                    Connect the world by shairng your stories<br>
+                </h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt mollitia dolorem voluptatum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt mollitia dolorem voluptatum </p>
+    </div>
+    <div class="formContainer">
+        <h1>Sign Up</h1>
+        <p>create your account</p>
+        <form action="/login" method='POST'>
+            <label for="first_name">First Name:</label><br>
+            <input type="text" id="first_name" name='first_name'><br>
+            <label for="last_name">Last Name:</label><br>
+            <input type="text" id="last_name" name='last_name'><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name='email'><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id='password' name='password'><br>
+            <label for="passwordConfirm">Confirm your password:</label><br>
+            <input type="password" id='passwordConfirm' name='passwordConfirm'><br>
+            <input type="submit" value='submit'><br>
+        </form>
+        {% with messages = get_flashed_messages() %}
+            {%if messages %}
+                {% for message in messages %}
+                    <p> {{message}} </p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</section>
+    
+    
+
+<footer>
+</footer>
+{%endblock%}
